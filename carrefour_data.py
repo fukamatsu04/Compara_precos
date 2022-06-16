@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-import praticando_plawright
 
 headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) '\
            'AppleWebKit/537.36 (KHTML, like Gecko) '\
@@ -21,7 +20,6 @@ else:
 
 print(url)
 
-praticando_plawright.StartPlayWirght()
 
 response = requests.get(url, headers=headers)
 content = response.content
