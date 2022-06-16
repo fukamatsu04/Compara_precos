@@ -20,7 +20,6 @@ else:
 
 print(url)
 
-
 response = requests.get(url, headers=headers)
 content = response.content
 soup = BeautifulSoup(content, "html.parser")
