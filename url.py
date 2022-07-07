@@ -1,6 +1,3 @@
-from bs4 import BeautifulSoup
-import requests
-
 headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) '\
            'AppleWebKit/537.36 (KHTML, like Gecko) '\
            'Chrome/75.0.3770.80 Safari/537.36'}
@@ -20,19 +17,3 @@ def search_url():
         url ="https://mercado.carrefour.com.br/s/"+product_searched+"?map=term"
 
     return url
-
-"""
-response = requests.get(url, headers=headers)
-content = response.content
-soup = BeautifulSoup(content, "html.parser")
-
-"""
-#testo = soup.find_all("h1")
-#print(soup.prettify())
-
-#print(testo)
-
-#print(soup.prettify())
-
-
-#"div", {"class":"css-1u9y7ms"}

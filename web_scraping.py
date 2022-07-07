@@ -1,5 +1,5 @@
 from playwright.sync_api import sync_playwright
-from carrefour_data import search_url
+from url import search_url
 from bs4 import BeautifulSoup
 
 
@@ -27,15 +27,17 @@ StartPlayWright()
 
 content = StartPlayWright.content
 soup = BeautifulSoup(content, "html.parser")
+image = soup.find_all("img", "css-j0j5gy")
 title = soup.find_all("h3", "css-1rgidqc")
 price = soup.find_all("div", "css-1xc4ph5")
 
 titleLoop = [titles.text for titles in title]
 priceLoop = [prices.text for prices in price]
 
-print(priceLoop)
+title_and_price = dict(zip(titleLoop, priceLoop))
 
-#print(StartPlayWirght.content)
+print(title_and_price)
+
 
 
 
